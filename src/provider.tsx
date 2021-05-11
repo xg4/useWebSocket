@@ -1,7 +1,15 @@
 import React from 'react'
 import { WebSocketContext } from './context'
-import { WS } from './ws'
+import type { WS } from './ws'
 
-export const WebSocketProvider: React.FC<{ ws: WS }> = ({ ws, children }) => (
-  <WebSocketContext.Provider value={ws}>{children}</WebSocketContext.Provider>
-)
+export function WebSocketProvider<T extends WS>({
+  ws,
+  children,
+}: {
+  ws: T
+  children: React.ReactNode
+}) {
+  return (
+    <WebSocketContext.Provider value={ws}>{children}</WebSocketContext.Provider>
+  )
+}

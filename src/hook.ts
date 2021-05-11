@@ -2,18 +2,18 @@ import React, { useContext, useEffect } from 'react'
 import { WebSocketContext } from './context'
 import type { WS } from './ws'
 
-function useWebSocket(): WS
+function useWebSocket<T extends WS>(): T
 
-function useWebSocket(
+function useWebSocket<T extends WS>(
   event: string,
   listener: Function,
   deps?: React.DependencyList
-): WS
+): T
 
-function useWebSocket(
+function useWebSocket<T extends WS>(
   event: Record<string, Function>,
   deps?: React.DependencyList
-): WS
+): T
 
 function useWebSocket(
   event?: any,
