@@ -20,24 +20,25 @@
     "esm/"
   ],
   "scripts": {
+    "build": "yarn build:cjs && yarn build:es",
     "build:cjs": "tsc",
-    "build:es": "tsc -m esNext --outDir esm",
-    "build": "yarn build:cjs && yarn build:es"
+    "build:es": "tsc -m esNext --outDir esm"
   },
   "dependencies": {
     "events": "^3.3.0",
-    "tslib": "^2.2.0"
+    "tslib": "^2.3.1"
   },
   "devDependencies": {
-    "@types/node": "^15.0.2",
-    "@types/react": "^17.0.5",
-    "prettier": "^2.3.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "@types/events": "^3.0.0",
+    "@types/react": "^16.9.41",
+    "@types/react-dom": "^16.9.8",
+    "prettier": "^2.6.2",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.1",
     "typescript": "^4.2.4"
   },
   "peerDependencies": {
-    "react": "^16.8.0  || ^17.0.0",
-    "react-dom": "^16.8.0  || ^17.0.0"
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
+    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
   }
 }

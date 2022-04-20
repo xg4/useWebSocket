@@ -1,4 +1,4 @@
-import EventEmitter from 'events'
+import { EventEmitter } from 'events'
 
 export interface Options {
   reconnectLimit?: number
@@ -21,7 +21,7 @@ export class WS extends EventEmitter {
 
   private reconnectInterval: number
 
-  private reconnectTimer?: NodeJS.Timeout
+  private reconnectTimer?: number
 
   readyState: ReadyState
 
