@@ -21,8 +21,8 @@
   ],
   "scripts": {
     "build": "yarn build:cjs && yarn build:es",
-    "build:cjs": "tsc",
-    "build:es": "tsc -m esNext --outDir esm"
+    "build:cjs": "rimraf ./lib && tsc",
+    "build:es": "rimraf ./esm && tsc -m esNext --outDir esm"
   },
   "dependencies": {
     "events": "^3.3.0",
@@ -35,6 +35,7 @@
     "prettier": "^2.6.2",
     "react": "^16.13.0",
     "react-dom": "^16.13.1",
+    "rimraf": "^3.0.2",
     "typescript": "^4.2.4"
   },
   "peerDependencies": {
