@@ -1,6 +1,16 @@
 import React, { useContext, useEffect } from 'react'
-import { WebSocketContext } from './context'
+import { WebSocketContext } from './provider'
 import type { WS } from './ws'
+
+export function useSocket() {
+  const socket = useContext(WebSocketContext)
+
+  if (!socket) {
+    throw new Error('No WS set, use WebSocketContext to set one')
+  }
+
+  return socket
+}
 
 function useWebSocket<T extends WS>(): T
 
@@ -20,7 +30,7 @@ function useWebSocket(
   listener?: any,
   deps?: React.DependencyList
 ) {
-  const socket = useContext(WebSocketContext)
+  const socket = useSocket()
 
   const _deps = (typeof event === 'string' ? deps : listener) ?? []
 

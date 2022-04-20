@@ -35,7 +35,7 @@ export class WS extends EventEmitter {
     this.reconnectInterval = reconnectInterval
     this.reconnectLimit = reconnectLimit
 
-    this._connect()
+    // this._connect()
   }
 
   reconnect() {
